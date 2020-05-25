@@ -68,6 +68,10 @@ THIRD_PARTY_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
+
     "django_celery_beat",
     "rest_framework",
     "rest_framework.authtoken",
@@ -305,3 +309,20 @@ REST_FRAMEWORK = {
 }
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+
+ACCOUNT_FORMS = {
+    'login': 'users.forms.BLoginForm',
+    'signup': 'users.forms.BSignupForm',
+    'add_email': 'allauth.account.forms.AddEmailForm',
+    'change_password': 'allauth.account.forms.ChangePasswordForm',
+    'set_password': 'allauth.account.forms.SetPasswordForm',
+    'reset_password': 'users.forms.BResetPasswordForm',
+    'reset_password_from_key': 'allauth.account.forms.ResetPasswordKeyForm',
+    'disconnect': 'allauth.socialaccount.forms.DisconnectForm',
+}
+
+SOCIALACCOUNT_FORMS = {'signup': 'users.forms.BSocialSignupForm'}
+
+ACCOUNT_USERNAME_REQUIRED = False
+

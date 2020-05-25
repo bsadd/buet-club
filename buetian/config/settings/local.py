@@ -66,3 +66,22 @@ INSTALLED_APPS += ["django_extensions"]  # noqa F405
 CELERY_TASK_EAGER_PROPAGATES = True
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+
+# Provider specific settings
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'APP': {
+            'client_id': '1081055777867-80bqmu922fcd763j082ohe5unmmc0414.apps.googleusercontent.com',
+            'secret': '834J3Hmm1YDqTQh58eGSnW2P',
+            'key': ''
+        }
+    },
+    'facebook': {
+        'APP': {
+            'client_id': '178871873476148',
+            'secret': 'cea265c6916ce91c80e6ff5a6ed6130e',
+            'key': ''
+        }
+    }
+}

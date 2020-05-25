@@ -1,2 +1,0 @@
-# buet-club
-BUET Club

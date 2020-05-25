@@ -7,6 +7,8 @@ from django.views.generic import DetailView, RedirectView, UpdateView
 
 User = get_user_model()
 
+from .models import Profile
+from .forms import ProfileUpdateForm
 
 class UserDetailView(LoginRequiredMixin, DetailView):
 
@@ -19,15 +21,14 @@ user_detail_view = UserDetailView.as_view()
 
 
 class UserUpdateView(LoginRequiredMixin, UpdateView):
-
-    model = User
-    fields = ["name"]
+    model = Profile
+    form_class = ProfileUpdateForm
 
     def get_success_url(self):
-        return reverse("users:detail", kwargs={"username": self.request.user.username})
+        return reverse("users:update", kwargs={"username": self.request.user.username})
 
     def get_object(self):
-        return User.objects.get(username=self.request.user.username)
+        return Profile.objects.get(user__username=self.request.user.username)
 
     def form_valid(self, form):
         messages.add_message(

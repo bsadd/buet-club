@@ -122,3 +122,8 @@ See detailed `cookiecutter-django Docker documentation`_.
 
 
 
+Docs
+^^^^^^
+
+All auth docs
+https://django-allauth.readthedocs.io/en/latest/
